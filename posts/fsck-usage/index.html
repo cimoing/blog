@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light"><head>
-    <title>  | My First Posd </title>
+    <title>  | fsck 的简单使用 </title>
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.72.0-DEV" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="description" content="">
     
@@ -13,7 +13,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://blog.imoing.com/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://blog.imoing.com/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://blog.imoing.com/favicon-16x16.png">
-    <link rel="canonical" href="https://blog.imoing.com/posts/my-first-posd/">
+    <link rel="canonical" href="https://blog.imoing.com/posts/fsck-usage/">
     
     
     <script type="text/javascript" src="https://blog.imoing.com/js/anatole-header.min.c275265a259296f3dd50e8236a77fcbcadb1dbb9597d3045c675dcc2c7c58a93.js" integrity="sha256-wnUmWiWSlvPdUOgjanf8vK2x27lZfTBFxnXcwsfFipM="></script>
@@ -53,14 +53,30 @@
     <div class="post-content">
 
       <div class="post-title">
-        <h3>My First Posd
+        <h3>fsck 的简单使用
         </h3>
         
         </div>
 
-    <blockquote>
-<p>Hello World!</p>
-</blockquote>
+    <h2 id="命令">命令</h2>
+<pre><code>fsck
+</code></pre><h2 id="用途">用途</h2>
+<p><strong>fsck</strong>命令被用于检查并且试图修复文件系统中的错误。当文件系统发生错误四化，可用fsck指令尝试加以修复。</p>
+<h2 id="语法">语法</h2>
+<pre><code>fsck [-sAVRTMNP] [-C [fd]] [-t fstype] [filesys…] [—] [fs-specific-options]
+</code></pre><h2 id="用法">用法</h2>
+<ul>
+<li>检测一个设备 fsck /dev/sda1</li>
+<li>检测指定目录 fsck /usr</li>
+<li>可添加-a参数来自动修复文件系统，而不询问任何问题</li>
+</ul>
+<h2 id="场景">场景</h2>
+<p>由于文件系统损坏，导致系统启动时一直自动进入到buxybox终端</p>
+<pre><code>BusyBox v1.18.5 (Ubuntu 1:1.18.5-1ubuntu4) built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+(initramfs)
+</code></pre><p>最终通过 fsck /dev/sda1 检测发现有异常，修复后可正常启动，怀疑是关机时异常导致</p>
 
     </div>
     <div class="post-footer">
