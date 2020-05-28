@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.imoing.com/categories/</loc>
+    <lastmod>2020-05-27T18:46:35+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.imoing.com/tags/fsck/</loc>
     <lastmod>2020-05-27T18:46:35+08:00</lastmod>
   </url>
@@ -13,7 +18,7 @@
   </url>
   
   <url>
-    <loc>https://blog.imoing.com/tags/linux/</loc>
+    <loc>https://blog.imoing.com/categories/linux/</loc>
     <lastmod>2020-05-27T18:46:35+08:00</lastmod>
   </url>
   
@@ -30,11 +35,6 @@
   <url>
     <loc>https://blog.imoing.com/</loc>
     <lastmod>2020-05-27T18:46:35+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.imoing.com/categories/</loc>
-    <lastmod>2019-07-18T10:18:06+08:00</lastmod>
   </url>
   
   <url>
