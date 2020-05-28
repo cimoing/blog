@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light"><head>
-    <title> Jake Guo | Posts </title>
+    <title> Jake Guo | 反转字符串-PHP </title>
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.72.0-DEV" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="description" content="Jake">
     
@@ -13,7 +13,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://blog.imoing.com/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://blog.imoing.com/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://blog.imoing.com/favicon-16x16.png">
-    <link rel="canonical" href="https://blog.imoing.com/post/">
+    <link rel="canonical" href="https://blog.imoing.com/post/revert-string-by-php/">
     
     
     <script type="text/javascript" src="https://blog.imoing.com/js/anatole-header.min.c275265a259296f3dd50e8236a77fcbcadb1dbb9597d3045c675dcc2c7c58a93.js" integrity="sha256-wnUmWiWSlvPdUOgjanf8vK2x27lZfTBFxnXcwsfFipM="></script>
@@ -47,7 +47,7 @@
         
         
         
-        <li><a class="current" href="/post/" title="">Posts</a></li>
+        <li><a  href="/post/" title="">Posts</a></li>
         
         
         <li><a  href="/tags/" title="">Tags</a></li>
@@ -65,63 +65,46 @@
 
             <div class="autopagerize_page_element">
                 <div class="content">
-<div class="archive animated fadeInDown">
-   
-    <ul class="list-with-title">
+<div class="post animated fadeInDown">
+    <div class="post-content">
+
+      <div class="post-title">
+        <h3>反转字符串-PHP
+        </h3>
+        
+        <div class="info">
+          <i class="fa fa-sun-o"></i><span class="date">Sun, Mar 26, 2017</span>
+          <i class="fa fa-clock-o"></i><span class="reading-time">1-minute read</span>
+        </div>
+        
+        </div>
+
+    <p>反转一个字符串,比如&quot;abc&quot;反转后结果为&quot;cba&rdquo;,看到问题首先想到的是<strong>strrev</strong>函数,此函数在反转由单字节字符组成的字符串是没有问题,但是无法处理Unicode这种多字节字符.因此通用的办法是分割字符串,然后重新组合。</p>
+<pre><code>$str = &quot;我思故我在 2333&quot;;
+preg_match_all(&quot;/./us&quot;, $str, $matches);
+echo join(”, array_reverse($matches[0]));
+</code></pre><p>这里用到了模式修饰符 <strong>u</strong> 和 <strong>s</strong> ,其中u表示以UTF-8读取正则表达式和目标字符串,因此在反转前还要做下编码检查与转换。<strong>s</strong> 使 <strong>.</strong> 通配符可以匹配换行符。</p>
+<blockquote>
+<p>在 <strong>u</strong> 模式下可以使用 <strong>\p{Han}</strong> 匹配中文</p>
+</blockquote>
+
+    </div>
+    <div class="post-footer">
+      <div class="info">
+        
+<span class="separator"><a class="category" href="/categories/php/">PHP</a></span>
+
+        
+    <span class="separator"><a class="tag" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">字符串</a><a class="tag" href="/tags/%E5%8F%8D%E8%BD%AC/">反转</a><a class="tag" href="/tags/%E6%AD%A3%E5%88%99/">正则</a></span>
+
+      </div>
+    </div>
+
+    
            
-      <div class="listing-title">2020</div>
-      
-      <ul class="listing">
-        <div class="listing-item">
-            <div class="listing-post"><a href="https://blog.imoing.com/post/fsck-usage/" title="fsck 的简单使用">fsck 的简单使用</a>
-              <div class="post-time"><span class="date">May 27</span></div>
-            </div>
-          </div>
-    </ul>
     
-         
-      <div class="listing-title">2019</div>
-      
-      <ul class="listing">
-        <div class="listing-item">
-            <div class="listing-post"><a href="https://blog.imoing.com/post/composer-quick-start/" title="Composer 开发入门">Composer 开发入门</a>
-              <div class="post-time"><span class="date">Jul 18</span></div>
-            </div>
-          </div>
-    </ul>
-    
-         
-      <div class="listing-title">2018</div>
-      
-      <ul class="listing">
-        <div class="listing-item">
-            <div class="listing-post"><a href="https://blog.imoing.com/post/laravel-unit-test-auth-problem/" title="Laravel测试用例遇到的问题">Laravel测试用例遇到的问题</a>
-              <div class="post-time"><span class="date">Apr 11</span></div>
-            </div>
-          </div>
-    </ul>
-    
-         
-      <div class="listing-title">2017</div>
-      
-      <ul class="listing">
-        <div class="listing-item">
-            <div class="listing-post"><a href="https://blog.imoing.com/post/revert-string-by-php/" title="反转字符串-PHP">反转字符串-PHP</a>
-              <div class="post-time"><span class="date">Mar 26</span></div>
-            </div>
-          </div>
-    </ul>
-    
-      <ul class="listing">
-        <div class="listing-item">
-            <div class="listing-post"><a href="https://blog.imoing.com/post/set-bridge-by-iptables/" title="使用iptables设置中继服务器">使用iptables设置中继服务器</a>
-              <div class="post-time"><span class="date">Feb 24</span></div>
-            </div>
-          </div>
-    </ul>
-    
-    
-  </div>
+</div>
+
 
                 </div>
             </div>

@@ -38,5 +38,23 @@
       <description>最近在对代码进行优化，其中一项是是使用懒加载的方式获取当前登</description>
     </item>
     
+    <item>
+      <title>反转字符串-PHP</title>
+      <link>https://blog.imoing.com/post/revert-string-by-php/</link>
+      <pubDate>Sun, 26 Mar 2017 14:34:01 +0800</pubDate>
+      
+      <guid>https://blog.imoing.com/post/revert-string-by-php/</guid>
+      <description>反转一个字符串,比如&amp;quot;abc&amp;quot;反转后结果</description>
+    </item>
+    
+    <item>
+      <title>使用iptables设置中继服务器</title>
+      <link>https://blog.imoing.com/post/set-bridge-by-iptables/</link>
+      <pubDate>Fri, 24 Feb 2017 14:41:32 +0800</pubDate>
+      
+      <guid>https://blog.imoing.com/post/set-bridge-by-iptables/</guid>
+      <description>想设置中继服务器的主要原因是中国电信宽带访问海外服务器太慢了</description>
+    </item>
+    
   </channel>
 </rss>

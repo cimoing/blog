@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light"><head>
-    <title> Jake Guo | Posts </title>
+    <title> Jake Guo | 使用iptables设置中继服务器 </title>
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.72.0-DEV" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="description" content="Jake">
     
@@ -13,7 +13,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://blog.imoing.com/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://blog.imoing.com/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://blog.imoing.com/favicon-16x16.png">
-    <link rel="canonical" href="https://blog.imoing.com/post/">
+    <link rel="canonical" href="https://blog.imoing.com/post/set-bridge-by-iptables/">
     
     
     <script type="text/javascript" src="https://blog.imoing.com/js/anatole-header.min.c275265a259296f3dd50e8236a77fcbcadb1dbb9597d3045c675dcc2c7c58a93.js" integrity="sha256-wnUmWiWSlvPdUOgjanf8vK2x27lZfTBFxnXcwsfFipM="></script>
@@ -47,7 +47,7 @@
         
         
         
-        <li><a class="current" href="/post/" title="">Posts</a></li>
+        <li><a  href="/post/" title="">Posts</a></li>
         
         
         <li><a  href="/tags/" title="">Tags</a></li>
@@ -65,63 +65,51 @@
 
             <div class="autopagerize_page_element">
                 <div class="content">
-<div class="archive animated fadeInDown">
-   
-    <ul class="list-with-title">
+<div class="post animated fadeInDown">
+    <div class="post-content">
+
+      <div class="post-title">
+        <h3>使用iptables设置中继服务器
+        </h3>
+        
+        <div class="info">
+          <i class="fa fa-sun-o"></i><span class="date">Fri, Feb 24, 2017</span>
+          <i class="fa fa-clock-o"></i><span class="reading-time">1-minute read</span>
+        </div>
+        
+        </div>
+
+    <p>想设置中继服务器的主要原因是中国电信宽带访问海外服务器太慢了,正好国内有个闲置的阿里云服务器,所以就想通过iptables端口转发的功能实现中继功能。</p>
+<h3 id="开启系统转发功能">开启系统转发功能</h3>
+<pre><code>vi /etc/sysctl.conf
+Change
+====
+net.ipv4.ip_forward = 1
+====
+</code></pre><h3 id="设置iptables">设置iptables</h3>
+<pre><code>iptables -t nat -A PREROUTING -i eth0 -p tcp –dport [目标端口] -j DNAT –to [目标ip]
+iptables -t nat -A PREROUTING -i eth0 -p udp –dport [目标端口] -j DNAT –to [目标ip]
+iptables -t nat -A POSTROUTING -p tcp -d [目标ip] –dport [目标端口] -j MASQUERADE
+iptables -t nat -A POSTROUTING -p udp -d [目标ip] –dport [目标端口] -j MASQUERADE
+</code></pre><p>然后执行<strong>service iptables save</strong>保存配置</p>
+
+    </div>
+    <div class="post-footer">
+      <div class="info">
+        
+<span class="separator"><a class="category" href="/categories/linux/">Linux</a></span>
+
+        
+    <span class="separator"><a class="tag" href="/tags/iptables/">iptables</a><a class="tag" href="/tags/%E4%B8%AD%E7%BB%A7/">中继</a></span>
+
+      </div>
+    </div>
+
+    
            
-      <div class="listing-title">2020</div>
-      
-      <ul class="listing">
-        <div class="listing-item">
-            <div class="listing-post"><a href="https://blog.imoing.com/post/fsck-usage/" title="fsck 的简单使用">fsck 的简单使用</a>
-              <div class="post-time"><span class="date">May 27</span></div>
-            </div>
-          </div>
-    </ul>
     
-         
-      <div class="listing-title">2019</div>
-      
-      <ul class="listing">
-        <div class="listing-item">
-            <div class="listing-post"><a href="https://blog.imoing.com/post/composer-quick-start/" title="Composer 开发入门">Composer 开发入门</a>
-              <div class="post-time"><span class="date">Jul 18</span></div>
-            </div>
-          </div>
-    </ul>
-    
-         
-      <div class="listing-title">2018</div>
-      
-      <ul class="listing">
-        <div class="listing-item">
-            <div class="listing-post"><a href="https://blog.imoing.com/post/laravel-unit-test-auth-problem/" title="Laravel测试用例遇到的问题">Laravel测试用例遇到的问题</a>
-              <div class="post-time"><span class="date">Apr 11</span></div>
-            </div>
-          </div>
-    </ul>
-    
-         
-      <div class="listing-title">2017</div>
-      
-      <ul class="listing">
-        <div class="listing-item">
-            <div class="listing-post"><a href="https://blog.imoing.com/post/revert-string-by-php/" title="反转字符串-PHP">反转字符串-PHP</a>
-              <div class="post-time"><span class="date">Mar 26</span></div>
-            </div>
-          </div>
-    </ul>
-    
-      <ul class="listing">
-        <div class="listing-item">
-            <div class="listing-post"><a href="https://blog.imoing.com/post/set-bridge-by-iptables/" title="使用iptables设置中继服务器">使用iptables设置中继服务器</a>
-              <div class="post-time"><span class="date">Feb 24</span></div>
-            </div>
-          </div>
-    </ul>
-    
-    
-  </div>
+</div>
+
 
                 </div>
             </div>
