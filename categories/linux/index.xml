@@ -20,5 +20,14 @@
       <description>命令 fsck 用途 fsck命令被用于检查并且试图修复文件系统中的错误</description>
     </item>
     
+    <item>
+      <title>使用iptables设置中继服务器</title>
+      <link>https://blog.imoing.com/post/set-bridge-by-iptables/</link>
+      <pubDate>Fri, 24 Feb 2017 14:41:32 +0800</pubDate>
+      
+      <guid>https://blog.imoing.com/post/set-bridge-by-iptables/</guid>
+      <description>想设置中继服务器的主要原因是中国电信宽带访问海外服务器太慢了</description>
+    </item>
+    
   </channel>
 </rss>
