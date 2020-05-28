@@ -34,6 +34,22 @@
   
   <url>
     <loc>https://blog.imoing.com/categories/</loc>
+    <lastmod>2019-07-18T10:18:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/tags/composer/</loc>
+    <lastmod>2019-07-18T10:18:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/post/composer-quick-start/</loc>
+    <lastmod>2019-07-18T10:18:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/categories/php/</loc>
+    <lastmod>2019-07-18T10:18:06+08:00</lastmod>
   </url>
   
 </urlset>

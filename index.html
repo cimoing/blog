@@ -79,6 +79,31 @@ BusyBox v1.18.5 (Ubuntu 1:1.18.5-1ubuntu4) built-in shell (ash) Enter 'help' for
     </div>
   </div>
   
+  <div class="post animated fadeInDown">
+    <div class="post-title">
+      <h3><a href="/post/composer-quick-start/">Composer 开发入门</a>
+      </h3>
+    </div>
+    <div class="post-content"><div class="p_part"><p>Composer对与分发自己的PHP软件包，方便别人引用来说是很好的一种方式。平时开发中经常会用到Composer来引入三方的优质软件包，例如 Laravel、easywechat等等，如果我们有一些好的想法如果分发出去呢？下面我们就一步步来告诉大家如何实现自己的第一个Composer包。
+初始化项目 首先创建composer.json文件用于生命基本信息。
+{ &quot;name&quot;: &quot;jake/dev-package&quot;, &quot;description&quot;: &quot;软件包描述&quot;, &quot;autoload&quot;: { &quot;psr-4&quot;: { &quot;Jake\Package\&quot;: &quot;src&quot; } }, } 配置好之后就可以在src目录编写项目逻辑，这里我们声明了自动载入符合psr-4规范。
+引用软件包 在上传到仓库之前，我们可以使用本地路径来引入
+{ &quot;name&quot;: &quot;jake/application&quot;, ... &quot;repositories&quot;: { &quot;dev-package&quot;: { &quot;type&quot;: &quot;path&quot;, &quot;url&quot;: &quot;relative/or/absolute/path/to/my/dev-package&quot;, &quot;options&quot;: { &quot;symlink&quot;: true } } } } 配置中的**&ldquo;type&rdquo;: &ldquo;path&rdquo;** 表示引入的是一个本地仓库，url定义了包的路径，路径可以使用相对路径或绝对路径。
+虽然设置了type和url后就可以开发了，但是composer会复制包的代码到vender目录，而且每次包发生变更都要执行composer update
+为了避免更新执行update操作，可以通过设置**&ldquo;symlink&rdquo;: true**参数让composer创建一个软链接到包所在目录
+最后一步操作就是使用composer require命令来引入软件包。
+composer require jake/dev-package @dev </p></div>
+  
+  <div class="p_part"><p></p></div></div>
+    <div class="post-footer">
+      <div class="meta">
+        <div class="info"><i class="fa fa-sun-o"></i><span class="date">Thu, Jul 18, 2019</span>
+          <a class="tag" href="/tags/composer/">composer</a>       
+        </div>
+      </div>
+    </div>
+  </div>
+  
 <div class="pagination">
   
 

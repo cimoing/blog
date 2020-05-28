@@ -22,5 +22,22 @@
 BusyBox v1.18.5 (Ubuntu 1:1.18.5-1ubuntu4) built-in shell (ash) Enter &#39;help&#39; for a list of built-in commands. (initramfs) 最终通过 fsck /dev/sda1 检测发现有异常，修复后可正常启动，怀疑是关机时异常导致</description>
     </item>
     
+    <item>
+      <title>Composer 开发入门</title>
+      <link>https://blog.imoing.com/post/composer-quick-start/</link>
+      <pubDate>Thu, 18 Jul 2019 10:18:06 +0800</pubDate>
+      
+      <guid>https://blog.imoing.com/post/composer-quick-start/</guid>
+      <description>Composer对与分发自己的PHP软件包，方便别人引用来说是很好的一种方式。平时开发中经常会用到Composer来引入三方的优质软件包，例如 Laravel、easywechat等等，如果我们有一些好的想法如果分发出去呢？下面我们就一步步来告诉大家如何实现自己的第一个Composer包。
+初始化项目 首先创建composer.json文件用于生命基本信息。
+{ &amp;quot;name&amp;quot;: &amp;quot;jake/dev-package&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;软件包描述&amp;quot;, &amp;quot;autoload&amp;quot;: { &amp;quot;psr-4&amp;quot;: { &amp;quot;Jake\Package\&amp;quot;: &amp;quot;src&amp;quot; } }, } 配置好之后就可以在src目录编写项目逻辑，这里我们声明了自动载入符合psr-4规范。
+引用软件包 在上传到仓库之前，我们可以使用本地路径来引入
+{ &amp;quot;name&amp;quot;: &amp;quot;jake/application&amp;quot;, ... &amp;quot;repositories&amp;quot;: { &amp;quot;dev-package&amp;quot;: { &amp;quot;type&amp;quot;: &amp;quot;path&amp;quot;, &amp;quot;url&amp;quot;: &amp;quot;relative/or/absolute/path/to/my/dev-package&amp;quot;, &amp;quot;options&amp;quot;: { &amp;quot;symlink&amp;quot;: true } } } } 配置中的**&amp;ldquo;type&amp;rdquo;: &amp;ldquo;path&amp;rdquo;** 表示引入的是一个本地仓库，url定义了包的路径，路径可以使用相对路径或绝对路径。
+虽然设置了type和url后就可以开发了，但是composer会复制包的代码到vender目录，而且每次包发生变更都要执行composer update
+为了避免更新执行update操作，可以通过设置**&amp;ldquo;symlink&amp;rdquo;: true**参数让composer创建一个软链接到包所在目录
+最后一步操作就是使用composer require命令来引入软件包。
+composer require jake/dev-package @dev </description>
+    </item>
+    
   </channel>
 </rss>
