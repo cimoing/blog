@@ -29,5 +29,14 @@
       <description>Composer对于分发自己的PHP软件包，方便别人引用来说</description>
     </item>
     
+    <item>
+      <title>Laravel测试用例遇到的问题</title>
+      <link>https://blog.imoing.com/post/laravel-unit-test-auth-problem/</link>
+      <pubDate>Wed, 11 Apr 2018 14:28:57 +0800</pubDate>
+      
+      <guid>https://blog.imoing.com/post/laravel-unit-test-auth-problem/</guid>
+      <description>最近在对代码进行优化，其中一项是是使用懒加载的方式获取当前登</description>
+    </item>
+    
   </channel>
 </rss>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light"><head>
-    <title> Jake Guo | Posts </title>
+    <title> Jake Guo | Laravel测试用例遇到的问题 </title>
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.72.0-DEV" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="description" content="Jake">
     
@@ -13,7 +13,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://blog.imoing.com/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://blog.imoing.com/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://blog.imoing.com/favicon-16x16.png">
-    <link rel="canonical" href="https://blog.imoing.com/post/">
+    <link rel="canonical" href="https://blog.imoing.com/post/laravel-unit-test-auth-problem/">
     
     
     <script type="text/javascript" src="https://blog.imoing.com/js/anatole-header.min.c275265a259296f3dd50e8236a77fcbcadb1dbb9597d3045c675dcc2c7c58a93.js" integrity="sha256-wnUmWiWSlvPdUOgjanf8vK2x27lZfTBFxnXcwsfFipM="></script>
@@ -47,7 +47,7 @@
         
         
         
-        <li><a class="current" href="/post/" title="">Posts</a></li>
+        <li><a  href="/post/" title="">Posts</a></li>
         
         
         <li><a  href="/tags/" title="">Tags</a></li>
@@ -65,44 +65,60 @@
 
             <div class="autopagerize_page_element">
                 <div class="content">
-<div class="archive animated fadeInDown">
-   
-    <ul class="list-with-title">
+<div class="post animated fadeInDown">
+    <div class="post-content">
+
+      <div class="post-title">
+        <h3>Laravel测试用例遇到的问题
+        </h3>
+        
+        <div class="info">
+          <i class="fa fa-sun-o"></i><span class="date">Wed, Apr 11, 2018</span>
+          <i class="fa fa-clock-o"></i><span class="reading-time">1-minute read</span>
+        </div>
+        
+        </div>
+
+    <p>最近在对代码进行优化，其中一项是是使用懒加载的方式获取当前登录的用户对象，在执行测试代码时发现模拟的多个用户请求只有一个生效。最终确认是由于测试用例中同一个Controller只初始化一次导致用户信息未更新。</p>
+<p>代码片段如下</p>
+<pre><code>#Controller.php
+
+private $user = null;
+
+public function getUser() {
+    if(!$this-&gt;user &amp;&amp; Auth::id()) {
+        $this-&gt;user = User::find(Auth::id());
+    }
+    return $this-&gt;user;
+}
+</code></pre><p>最终修改如下</p>
+<pre><code>#Controller.php
+private $user = null;
+
+public function getUser() {
+    if((!$this-&gt;user &amp;&amp; Auth::id()) || ($this-&gt;user &amp;&amp; Auth::id() &amp;&amp; $this-&gt;user-&gt;id != Auth::id())) {
+        $this-&gt;user = User::find(Auth::id());
+    }
+    return $this-&gt;user;
+}
+</code></pre>
+    </div>
+    <div class="post-footer">
+      <div class="info">
+        
+<span class="separator"><a class="category" href="/categories/php/">PHP</a></span>
+
+        
+    <span class="separator"><a class="tag" href="/tags/laravel/">Laravel</a><a class="tag" href="/tags/auth/">Auth</a><a class="tag" href="/tags/test/">Test</a><a class="tag" href="/tags/%E6%B5%8B%E8%AF%95/">测试</a></span>
+
+      </div>
+    </div>
+
+    
            
-      <div class="listing-title">2020</div>
-      
-      <ul class="listing">
-        <div class="listing-item">
-            <div class="listing-post"><a href="https://blog.imoing.com/post/fsck-usage/" title="fsck 的简单使用">fsck 的简单使用</a>
-              <div class="post-time"><span class="date">May 27</span></div>
-            </div>
-          </div>
-    </ul>
     
-         
-      <div class="listing-title">2019</div>
-      
-      <ul class="listing">
-        <div class="listing-item">
-            <div class="listing-post"><a href="https://blog.imoing.com/post/composer-quick-start/" title="Composer 开发入门">Composer 开发入门</a>
-              <div class="post-time"><span class="date">Jul 18</span></div>
-            </div>
-          </div>
-    </ul>
-    
-         
-      <div class="listing-title">2018</div>
-      
-      <ul class="listing">
-        <div class="listing-item">
-            <div class="listing-post"><a href="https://blog.imoing.com/post/laravel-unit-test-auth-problem/" title="Laravel测试用例遇到的问题">Laravel测试用例遇到的问题</a>
-              <div class="post-time"><span class="date">Apr 11</span></div>
-            </div>
-          </div>
-    </ul>
-    
-    
-  </div>
+</div>
+
 
                 </div>
             </div>
