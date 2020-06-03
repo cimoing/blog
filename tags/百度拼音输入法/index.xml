@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>百度拼音输入法 on 番茄不爱吃西红柿</title>
+    <link>https://blog.imoing.com/tags/%E7%99%BE%E5%BA%A6%E6%8B%BC%E9%9F%B3%E8%BE%93%E5%85%A5%E6%B3%95/</link>
+    <description>Recent content in 百度拼音输入法 on 番茄不爱吃西红柿</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 03 Jun 2020 10:37:01 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.imoing.com/tags/%E7%99%BE%E5%BA%A6%E6%8B%BC%E9%9F%B3%E8%BE%93%E5%85%A5%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>禁用百度拼音输入法for Linux日志输出</title>
+      <link>https://blog.imoing.com/post/disable-baidu-pinyin-logs/</link>
+      <pubDate>Wed, 03 Jun 2020 10:37:01 +0800</pubDate>
+      
+      <guid>https://blog.imoing.com/post/disable-baidu-pinyin-logs/</guid>
+      <description>最近百度发布了百度拼音输入法for Linux，上手之后甚是喜</description>
+    </item>
+    
+  </channel>
+</rss>
