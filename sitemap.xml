@@ -4,27 +4,72 @@
   
   <url>
     <loc>https://blog.imoing.com/categories/</loc>
-    <lastmod>2020-06-03T10:37:01+08:00</lastmod>
+    <lastmod>2020-07-26T17:38:36+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.imoing.com/categories/linux/</loc>
-    <lastmod>2020-06-03T10:37:01+08:00</lastmod>
+    <loc>https://blog.imoing.com/tags/mysql/</loc>
+    <lastmod>2020-07-26T17:38:36+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/categories/mysql/</loc>
+    <lastmod>2020-07-26T17:38:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.imoing.com/post/</loc>
-    <lastmod>2020-06-03T10:37:01+08:00</lastmod>
+    <lastmod>2020-07-26T17:38:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.imoing.com/tags/</loc>
-    <lastmod>2020-06-03T10:37:01+08:00</lastmod>
+    <lastmod>2020-07-26T17:38:36+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/tags/%E4%BA%8B%E5%8A%A1%E5%B5%8C%E5%A5%97/</loc>
+    <lastmod>2020-07-26T17:38:36+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/post/%E4%BA%8B%E5%8A%A1%E5%B5%8C%E5%A5%97/</loc>
+    <lastmod>2020-07-26T17:38:36+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.imoing.com/</loc>
-    <lastmod>2020-06-03T10:37:01+08:00</lastmod>
+    <lastmod>2020-07-26T17:38:36+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/tags/2fa/</loc>
+    <lastmod>2020-06-03T18:31:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/categories/linux/</loc>
+    <lastmod>2020-06-03T18:31:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/tags/ssh/</loc>
+    <lastmod>2020-06-03T18:31:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/post/configure-ssh-2fa/</loc>
+    <lastmod>2020-06-03T18:31:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/tags/%E5%8F%8C%E5%9B%A0%E7%B4%A0%E8%AE%A4%E8%AF%81/</loc>
+    <lastmod>2020-06-03T18:31:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/categories/%E5%AE%89%E5%85%A8/</loc>
+    <lastmod>2020-06-03T18:31:55+08:00</lastmod>
   </url>
   
   <url>

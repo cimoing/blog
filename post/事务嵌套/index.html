@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light"><head>
-    <title> Jake Guo | PHP </title>
+    <title> Jake Guo | 事务嵌套 </title>
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.72.0-DEV" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <meta name="description" content="Jake">
     
@@ -13,7 +13,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="https://blog.imoing.com/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="https://blog.imoing.com/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="https://blog.imoing.com/favicon-16x16.png">
-    <link rel="canonical" href="https://blog.imoing.com/categories/php/">
+    <link rel="canonical" href="https://blog.imoing.com/post/%E4%BA%8B%E5%8A%A1%E5%B5%8C%E5%A5%97/">
     
     
     <script type="text/javascript" src="https://blog.imoing.com/js/anatole-header.min.c275265a259296f3dd50e8236a77fcbcadb1dbb9597d3045c675dcc2c7c58a93.js" integrity="sha256-wnUmWiWSlvPdUOgjanf8vK2x27lZfTBFxnXcwsfFipM="></script>
@@ -74,44 +74,92 @@
 
             <div class="autopagerize_page_element">
                 <div class="content">
-<div class="archive animated fadeInDown">
-   
-    <ul class="list-with-title">
+<div class="post animated fadeInDown">
+    <div class="post-content">
+
+      <div class="post-title">
+        <h3>事务嵌套
+        </h3>
+        
+        <div class="info">
+          <i class="fa fa-sun-o"></i><span class="date">Sun, Jul 26, 2020</span>
+          <i class="fa fa-clock-o"></i><span class="reading-time">1-minute read</span>
+        </div>
+        
+        </div>
+
+    <p>实际开发中由于多个业务逻辑可能存在嵌套关系，因此存在事务之间嵌套的处理。在Mysql中可通过<code>SAVEPOINT</code>来达到嵌套的目的。</p>
+<h3 id="语法">语法</h3>
+<p><strong>SAVEPOINT <em>identifier</em></strong>  创建节点，在事务中可直接回退到此节点<br>
+<strong>RELEASE SAVEPOINT <em>identifier</em></strong> 释放节点，不会触发<code>COMMIT</code>或<code>ROLLBACK</code><br>
+<strong>ROLLBACK [WORK] TO [SAVEPOINT] <em>identifier</em></strong> 回滚到某个节点，不影响回滚节点之前的变更，此节点之后的变更会被<code>ROLLBACK</code></p>
+<h3 id="业务逻辑">业务逻辑</h3>
+<p><strong>开启事务</strong>  如果存在已经开启的事务则创建 <code>SAVEPOINT</code>，否则执行<code>BEGIN</code></p>
+<p><strong>回滚</strong> 如果存在<code>SAVEPOINT</code> 则 <code>ROLLABCK TO SAVEPOINT</code>,否则执行 <code>ROLLBACK</code></p>
+<p><strong>提交</strong> 如果还存在有<code>SAVEPOINT</code>则 <code>RELEASE SAVEPOINT</code>，否则执行<code>COMMIT</code></p>
+<h3 id="应用场景">应用场景</h3>
+<ol start="0">
+<li>业务逻辑事务嵌套</li>
+<li>测试逻辑自动回滚 可以避免存在脏数据</li>
+</ol>
+<h3 id="示例">示例</h3>
+<pre><code>mysql&gt; create table t1 (c1 int primary key);
+Query OK, 0 rows affected (0.08 sec)
+
+mysql&gt; begin;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; insert into t1 values (1);
+Query OK, 1 row affected (0.01 sec)
+
+mysql&gt; savepoint a;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; insert into t1 values (2);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; savepoint b;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; insert into t1 values (3);
+Query OK, 1 row affected (0.00 sec)
+
+mysql&gt; rollback to savepoint a;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; commit;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql&gt; select * from t1;
++----+
+| c1 |
++----+
+|  1 |
++----+
+1 row in set (0.00 sec)
+</code></pre><h3 id="引用">引用</h3>
+<ol>
+<li><a href="https://dev.mysql.com/doc/refman/8.0/en/savepoint.html">savepoint 官方</a></li>
+<li><a href="https://www.cnblogs.com/justfortaste/p/5054368.html">savepoint 原理</a></li>
+</ol>
+
+    </div>
+    <div class="post-footer">
+      <div class="info">
+        
+<span class="separator"><a class="category" href="/categories/mysql/">Mysql</a></span>
+
+        
+    <span class="separator"><a class="tag" href="/tags/mysql/">Mysql</a><a class="tag" href="/tags/%E4%BA%8B%E5%8A%A1%E5%B5%8C%E5%A5%97/">事务嵌套</a></span>
+
+      </div>
+    </div>
+
+    
            
-      <div class="listing-title">2019</div>
-      
-      <ul class="listing">
-        <div class="listing-item">
-            <div class="listing-post"><a href="https://blog.imoing.com/post/composer-quick-start/" title="Composer 开发入门">Composer 开发入门</a>
-              <div class="post-time"><span class="date">Jul 18</span></div>
-            </div>
-          </div>
-    </ul>
     
-         
-      <div class="listing-title">2018</div>
-      
-      <ul class="listing">
-        <div class="listing-item">
-            <div class="listing-post"><a href="https://blog.imoing.com/post/laravel-unit-test-auth-problem/" title="Laravel测试用例遇到的问题">Laravel测试用例遇到的问题</a>
-              <div class="post-time"><span class="date">Apr 11</span></div>
-            </div>
-          </div>
-    </ul>
-    
-         
-      <div class="listing-title">2017</div>
-      
-      <ul class="listing">
-        <div class="listing-item">
-            <div class="listing-post"><a href="https://blog.imoing.com/post/revert-string-by-php/" title="反转字符串-PHP">反转字符串-PHP</a>
-              <div class="post-time"><span class="date">Mar 26</span></div>
-            </div>
-          </div>
-    </ul>
-    
-    
-  </div>
+</div>
+
 
                 </div>
             </div>
