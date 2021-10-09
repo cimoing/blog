@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on 番茄不爱吃西红柿</title>
+    <link>https://blog.imoing.com/tags/python/</link>
+    <description>Recent content in Python on 番茄不爱吃西红柿</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 18 Jun 2021 16:03:17 +0800</lastBuildDate>
+    
+	<atom:link href="https://blog.imoing.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Python虚拟环境</title>
+      <link>https://blog.imoing.com/post/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Fri, 18 Jun 2021 16:03:17 +0800</pubDate>
+      
+      <guid>https://blog.imoing.com/post/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</guid>
+      <description>使用venv根据需要创建轻量级&amp;quot;虚拟环境&amp;rdqu</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -4,17 +4,77 @@
   
   <url>
     <loc>https://blog.imoing.com/categories/</loc>
-    <lastmod>2020-10-10T17:16:56+08:00</lastmod>
+    <lastmod>2021-10-09T15:11:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/tags/getenv/</loc>
+    <lastmod>2021-10-09T15:11:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/tags/php/</loc>
+    <lastmod>2021-10-09T15:11:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/categories/php/</loc>
+    <lastmod>2021-10-09T15:11:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/post/php-func-getenv/</loc>
+    <lastmod>2021-10-09T15:11:47+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.imoing.com/post/</loc>
-    <lastmod>2020-10-10T17:16:56+08:00</lastmod>
+    <lastmod>2021-10-09T15:11:47+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.imoing.com/tags/</loc>
-    <lastmod>2020-10-10T17:16:56+08:00</lastmod>
+    <lastmod>2021-10-09T15:11:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/</loc>
+    <lastmod>2021-10-09T15:11:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/</loc>
+    <lastmod>2021-10-09T15:11:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/post/%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4/</loc>
+    <lastmod>2021-08-04T10:29:40+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/tags/python/</loc>
+    <lastmod>2021-06-18T16:03:17+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/categories/python/</loc>
+    <lastmod>2021-06-18T16:03:17+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/post/python%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</loc>
+    <lastmod>2021-06-18T16:03:17+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/tags/venv/</loc>
+    <lastmod>2021-06-18T16:03:17+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83/</loc>
+    <lastmod>2021-06-18T16:03:17+08:00</lastmod>
   </url>
   
   <url>
@@ -34,11 +94,6 @@
   
   <url>
     <loc>https://blog.imoing.com/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/</loc>
-    <lastmod>2020-10-10T17:16:56+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.imoing.com/</loc>
     <lastmod>2020-10-10T17:16:56+08:00</lastmod>
   </url>
   
@@ -124,11 +179,6 @@
   
   <url>
     <loc>https://blog.imoing.com/post/composer-quick-start/</loc>
-    <lastmod>2019-07-18T10:18:06+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.imoing.com/categories/php/</loc>
     <lastmod>2019-07-18T10:18:06+08:00</lastmod>
   </url>
   
