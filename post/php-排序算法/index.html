@@ -82,7 +82,10 @@
         
         </div>
 
-    <p>PHP中的默认排序算法主要为快速排序，同时根据待排序元素数量不同使用不同的算法，具体如下：</p>
+    <ul>
+<li>文件： <code>Zend/zend_sort.c</code>:<code>ZEND_API void zend_sort(void *base, size_t nmemb, size_t siz, compare_func_t cmp, swap_func_t swp</code></li>
+</ul>
+<p>PHP中的默认排序算法主要为快速排序，同时根据待排序元素数量不同使用不同的算法，具体如下：</p>
 <ul>
 <li>当待排序元素数量小于等于16是，使用插入排序</li>
 </ul>
