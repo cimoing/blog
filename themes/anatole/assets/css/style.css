@@ -245,7 +245,6 @@ a:hover, a:active {
   border-radius: 50%;
 }
 .sidebar .logo-title .title h3 {
-  text-transform: uppercase;
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 2px;
@@ -284,13 +283,11 @@ a:hover, a:active {
   margin: 30px;
 }
 .post .post-title h1 {
-  text-transform: uppercase;
   font-size: 30px;
   letter-spacing: 5px;
   line-height: 1;
 }
 .post .post-title h2 {
-  text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 28px;
   line-height: 1;
@@ -298,7 +295,6 @@ a:hover, a:active {
   color: var(--heading-color);
 }
 .post .post-title h3 {
-  text-transform: uppercase;
   letter-spacing: 1px;
   line-height: 1;
   font-weight: 600;
