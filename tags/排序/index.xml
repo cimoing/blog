@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>PHP on 番茄不爱吃西红柿</title>
-    <link>https://blog.imoing.com/tags/php/</link>
-    <description>Recent content in PHP on 番茄不爱吃西红柿</description>
+    <title>排序 on 番茄不爱吃西红柿</title>
+    <link>https://blog.imoing.com/tags/%E6%8E%92%E5%BA%8F/</link>
+    <description>Recent content in 排序 on 番茄不爱吃西红柿</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 09 Oct 2021 16:16:24 +0800</lastBuildDate>
     
-	<atom:link href="https://blog.imoing.com/tags/php/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.imoing.com/tags/%E6%8E%92%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,15 +18,6 @@
       
       <guid>https://blog.imoing.com/post/php-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</guid>
       <description>PHP中的默认排序算法主要为快速排序，同时根据待排序元素数量</description>
-    </item>
-    
-    <item>
-      <title>PHP函数-getenv</title>
-      <link>https://blog.imoing.com/post/php-func-getenv/</link>
-      <pubDate>Sat, 09 Oct 2021 15:11:47 +0800</pubDate>
-      
-      <guid>https://blog.imoing.com/post/php-func-getenv/</guid>
-      <description>说明 getenv(string $varname, bool $local_only = false): string 获取一个环境变量的值 $local_only 表示是否只读取系统或</description>
     </item>
     
   </channel>
