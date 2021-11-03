@@ -42,6 +42,7 @@ draft: true
 #### 指令
 
 * 给指定连接发送消息 action:send, body:xxxxxx
+* 断开连接 action:close
 
 ### 数据路由服务
 
