@@ -5,10 +5,6 @@
     <link>https://blog.imoing.com/series/</link>
     <description>Recent content in Series on 番茄不爱吃西红柿</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    
-	<atom:link href="https://blog.imoing.com/series/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>zh-cn</language><atom:link href="https://blog.imoing.com/series/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

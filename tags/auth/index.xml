@@ -6,11 +6,7 @@
     <description>Recent content in Auth on 番茄不爱吃西红柿</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 11 Apr 2018 14:28:57 +0800</lastBuildDate>
-    
-	<atom:link href="https://blog.imoing.com/tags/auth/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 11 Apr 2018 14:28:57 +0800</lastBuildDate><atom:link href="https://blog.imoing.com/tags/auth/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Laravel测试用例遇到的问题</title>
       <link>https://blog.imoing.com/post/laravel-unit-test-auth-problem/</link>

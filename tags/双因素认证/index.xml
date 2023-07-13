@@ -6,11 +6,7 @@
     <description>Recent content in 双因素认证 on 番茄不爱吃西红柿</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 03 Jun 2020 18:31:55 +0800</lastBuildDate>
-    
-	<atom:link href="https://blog.imoing.com/tags/%E5%8F%8C%E5%9B%A0%E7%B4%A0%E8%AE%A4%E8%AF%81/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 03 Jun 2020 18:31:55 +0800</lastBuildDate><atom:link href="https://blog.imoing.com/tags/%E5%8F%8C%E5%9B%A0%E7%B4%A0%E8%AE%A4%E8%AF%81/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SSH服务增加双因素认证</title>
       <link>https://blog.imoing.com/post/configure-ssh-2fa/</link>

@@ -6,11 +6,7 @@
     <description>Recent content in composer on 番茄不爱吃西红柿</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 18 Jul 2019 10:18:06 +0800</lastBuildDate>
-    
-	<atom:link href="https://blog.imoing.com/tags/composer/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 18 Jul 2019 10:18:06 +0800</lastBuildDate><atom:link href="https://blog.imoing.com/tags/composer/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Composer 开发入门</title>
       <link>https://blog.imoing.com/post/composer-quick-start/</link>
