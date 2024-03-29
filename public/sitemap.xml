@@ -3,7 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.imoing.com/categories/</loc>
+    <lastmod>2024-03-29T16:16:02+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.imoing.com/post/</loc>
+    <lastmod>2024-03-29T16:16:02+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/tags/</loc>
+    <lastmod>2024-03-29T16:16:02+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/tags/%E5%88%86%E5%B8%83%E5%BC%8F/</loc>
     <lastmod>2024-03-29T16:16:02+08:00</lastmod>
   </url>
   
@@ -13,13 +28,18 @@
   </url>
   
   <url>
-    <loc>https://blog.imoing.com/post/%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://blog.imoing.com/categories/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2024-03-29T16:16:02+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.imoing.com/categories/</loc>
-    <lastmod>2021-10-09T16:16:24+08:00</lastmod>
+    <loc>https://blog.imoing.com/tags/%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2024-03-29T16:16:02+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.imoing.com/post/%E9%9B%AA%E8%8A%B1%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2024-03-29T16:16:02+08:00</lastmod>
   </url>
   
   <url>
@@ -34,11 +54,6 @@
   
   <url>
     <loc>https://blog.imoing.com/post/php-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2021-10-09T16:16:24+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.imoing.com/tags/</loc>
     <lastmod>2021-10-09T16:16:24+08:00</lastmod>
   </url>
   
