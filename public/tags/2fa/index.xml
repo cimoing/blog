@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2FA on 番茄不爱吃西红柿</title>
+    <link>https://blog.imoing.com/tags/2fa/</link>
+    <description>Recent content in 2FA on 番茄不爱吃西红柿</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 03 Jun 2020 18:31:55 +0800</lastBuildDate><atom:link href="https://blog.imoing.com/tags/2fa/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SSH服务增加双因素认证</title>
+      <link>https://blog.imoing.com/post/configure-ssh-2fa/</link>
+      <pubDate>Wed, 03 Jun 2020 18:31:55 +0800</pubDate>
+      
+      <guid>https://blog.imoing.com/post/configure-ssh-2fa/</guid>
+      <description>简介 SSH常被用来远程远程访问Linux系统。由于我们经常用</description>
+    </item>
+    
+  </channel>
+</rss>

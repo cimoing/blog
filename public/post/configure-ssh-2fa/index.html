@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light"><head>
+    <title> Jake Guo | SSH服务增加双因素认证 </title>
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.80.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="Jake">
+    
+    <link rel="stylesheet" href="https://blog.imoing.com/css/style.min.997dda3691a668d32603096a3e399c0e22a512378e9ddd1de16384f70d5bbf55.css" integrity="sha256-mX3aNpGmaNMmAwlqPjmcDiKlEjeOnd0d4WOE9w1bv1U=" type="text/css">
+    
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <base href="https://blog.imoing.com/">
+    
+    <link rel="shortcut icon" href="https://blog.imoing.com/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://blog.imoing.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://blog.imoing.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://blog.imoing.com/favicon-16x16.png">
+    <link rel="canonical" href="https://blog.imoing.com/post/configure-ssh-2fa/">
+    
+    
+    <script type="text/javascript" src="https://blog.imoing.com/js/anatole-header.min.c275265a259296f3dd50e8236a77fcbcadb1dbb9597d3045c675dcc2c7c58a93.js" integrity="sha256-wnUmWiWSlvPdUOgjanf8vK2x27lZfTBFxnXcwsfFipM="></script>
+</head><body><div class="sidebar animated fadeInDown">
+    <div class="logo-title">
+      <div class="title">
+        <img src="https://blog.imoing.com/images/profile.jpg" alt="profile picture">
+        <h3 title=""><a href="../../">番茄不爱吃西红柿</a></h3>
+        <div class="description">
+          <p>Jake</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links">
+        
+        <li>
+        <a href="https://github.com/cimoing" rel="me" aria-label="GitHub">
+          <i class="fa fa-2x fa-github" aria-hidden="true"></i>
+        </a>          
+        </li>
+
+        
+    </ul>
+    <div class="footer">
+        <div class="by_farbox">&copy; Jake Guo 2024 </div>
+      </div>
+    </div>
+</div><div class="main">
+            <div class="page-top animated fadeInDown">
+    <ul class="nav">
+        
+        
+        
+        <li><a  href="../../" title="">首页</a></li>
+        
+        
+        <li><a  href="../../post/" title="">文章</a></li>
+        
+        
+        <li><a  href="../../tags/" title="">标签</a></li>
+        
+        
+        <li><a  href="../../categories/" title="">分类</a></li>
+        
+    </ul>
+    <div class="themeswitcher">
+        <a class="theme-switch" title="Switch Theme">
+            <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+        </a>
+    </div>
+</div>
+
+            <div class="autopagerize_page_element">
+                <div class="content">
+<div class="post animated fadeInDown">
+    <div class="post-content">
+
+      <div class="post-title">
+        <h3>SSH服务增加双因素认证
+        </h3>
+        
+        <div class="info">
+          <i class="fa fa-sun-o"></i><span class="date">Wed, Jun 3, 2020</span>
+          <i class="fa fa-clock-o"></i><span class="reading-time">2-minute read</span>
+        </div>
+        
+        </div>
+
+    <h2 id="简介">简介</h2>
+<p><strong>SSH</strong>常被用来远程远程访问Linux系统。由于我们经常用来连接重要的电脑，因此推荐增加另外一层安全防护。这里讲述了**双因素认证(2FA)**的配置方法。</p>
+<h3 id="什么是双因素认证">什么是双因素认证</h3>
+<p>多因素认证是一种通过至少两种认证方式来鉴权的方法。最常见也最简单的方式就是双因素认证，通过一个密码和一个基于时间生成代码的APP。</p>
+<p>我们这里会使用Google Authenticator应用来生成验证码。</p>
+<h3 id="准备">准备</h3>
+<ul>
+<li>运行Ubuntu 16.06 LTS或以上版本</li>
+<li>运行Android或iOS系统的手机</li>
+<li>一个配置好的SSH连接</li>
+<li>明白密码被盗之后的危险</li>
+<li>你不需要了解什么是双因素认证及其是如何生效的</li>
+</ul>
+<h2 id="安装及配置依赖">安装及配置依赖</h2>
+<h3 id="安装google-authenticator-pam模块">安装Google Authenticator PAM模块</h3>
+<p>在终端中输入:</p>
+<pre><code>sudo apt install libpam-google-authenticator
+</code></pre><h3 id="配置ssh">配置SSH</h3>
+<p>为了上SSH使用<strong>Google Authenticator PAM</strong>模块，在<code>/etc/pam.d/sshd</code>添加如下内容：</p>
+<pre><code>auth required pam_google_authenticator.so
+</code></pre><p>然后重启<code>sshd</code>服务：</p>
+<pre><code>sudo systemctl restart sshd.service
+</code></pre><p>编辑<code>/etc/ssh/sshd_config</code>文件，把<code>ChallengeResponseAuthentication</code>从<code>no</code>改为<code>yes</code>：</p>
+<pre><code># Change to yes to enable challenge-response passwords (beware issues with
+# some PAM modules and threads)
+ChallengeResponseAuthentication no # CHANGE THIS TO YES
+
+# Change to no to disable tunnelled clear text passwords
+#PasswordAuthentication yes
+</code></pre><h2 id="认证配置">认证配置</h2>
+<p>Google Authenticator是的配置双因素认证相比libpam-oath更加简单。
+在终端中执行<code>google-authenticator</code>命令。它会提问几个问题，下面是推荐配置：</p>
+<ul>
+<li>Make tokens <strong>time-base</strong>(基于时间生成token): yes</li>
+<li>Update the <code>.google_authenticator</code>(更新.google_authenticator文件) file: yes</li>
+<li>Disallow multiple uses(禁止重复使用): yes</li>
+<li>Increase the original generation time limit(增加原来生成token的时间限制): no</li>
+<li>Enable rate-limiting(开启速率限制，防暴力破解): yes</li>
+</ul>
+<p>最后会生成一个二维码，下面有几个用于在无法使用手机的情况下使用的验证码,可以写到纸上或者其它安全的地方。</p>
+<p>然后打开Google Authenticator应用并添加密钥(或扫码)就可以使用了。</p>
+<blockquote>
+<p>不要使用非加密的服务(如笔记同步服务)去保存密钥。</p>
+</blockquote>
+
+    </div>
+    <div class="post-footer">
+      <div class="info">
+        
+<span class="separator"><a class="category" href="../../categories/linux/">Linux</a><a class="category" href="../../categories/%E5%AE%89%E5%85%A8/">安全</a></span>
+
+        
+    <span class="separator"><a class="tag" href="../../tags/ssh/">SSH</a><a class="tag" href="../../tags/2fa/">2FA</a><a class="tag" href="../../tags/%E5%8F%8C%E5%9B%A0%E7%B4%A0%E8%AE%A4%E8%AF%81/">双因素认证</a></span>
+
+      </div>
+    </div>
+
+    
+           
+    
+</div>
+
+
+                </div>
+            </div>
+        </div>
+</body>
+
+
+
+<script type="text/javascript" src="https://blog.imoing.com/js/jquery.min.86b1e8f819ee2d9099a783e50b49dff24282545fc40773861f9126b921532e4c.js" integrity="sha256-hrHo&#43;BnuLZCZp4PlC0nf8kKCVF/EB3OGH5EmuSFTLkw="></script>
+
+
+
+
+<script type="text/javascript" src="https://blog.imoing.com/js/bundle.min.0f9c74cb78f13d1f15f33daff4037c70354f98acfbb97a6f61708966675c3cae.js" integrity="sha256-D5x0y3jxPR8V8z2v9AN8cDVPmKz7uXpvYXCJZmdcPK4="></script>
+
+<script type="text/javascript" src="https://blog.imoing.com/js/medium-zoom.min.7487768bffcc6aee437cf6a4ac7da5d2ffc61dc63b36316a14122ceb26b34c70.js" integrity="sha256-dId2i//Mau5DfPakrH2l0v/GHcY7NjFqFBIs6yazTHA="></script>
+
+<link rel="stylesheet" href="https://blog.imoing.com/css/medium-zoom.min.a1468f7a1cce6fe96c4b5483cb4645b85728a32b3abbd598c375a92df16230ef.css" integrity="sha256-oUaPehzOb&#43;lsS1SDy0ZFuFcooys6u9WYw3WpLfFiMO8=" type="text/css"></html></body>
+
+</html>
